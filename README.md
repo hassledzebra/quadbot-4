@@ -48,6 +48,8 @@ Full-speed video: [images/tricks.mp4](images/tricks.mp4)
 
 ## Assembly
 
+**Step-by-step guide (PDF):** [docs/QuadBot-4_Assembly_Guide.pdf](docs/QuadBot-4_Assembly_Guide.pdf): parts, build steps, wiring schematic, 3D wiring views, firmware and troubleshooting.
+
 ![assembly animation](images/assembly.gif)
 
 Full-size video: [images/assembly.mp4](images/assembly.mp4). The Arduino and the breadboard in the animation are simple stand-in models.
@@ -61,7 +63,7 @@ Full-size video: [images/assembly.mp4](images/assembly.mp4). The Arduino and the
 
 ## Wiring
 
-![wiring](images/robot_side.jpg)
+![wiring schematic](images/wiring_schematic.png)
 
 ```
  Arduino UNO R4 WiFi                    Breadboard power rails
@@ -82,10 +84,19 @@ Full-size video: [images/assembly.mp4](images/assembly.mp4). The Arduino and the
 | Red | (+) rail = Arduino 5V |
 | Orange | signal pin: front-left D11, front-right D10, rear-left D9, rear-right D8 |
 
+- **Link both sides of the breadboard.** A half-size breadboard has a separate rail pair on each long side. Bridge them with two short jumpers at the rear end, + to + and − to −, so the servos on the right side get power too.
 - **Bundle each servo first.** The servo plug connects to three jumper wires; wrap each servo's plug-and-jumper joint with a bit of tape so the three wires stay together and don't pull apart when the legs move.
 - All grounds are shared: Arduino GND and every brown wire go to the (−) rail.
 - **Power note:** all four servos run from the Arduino's 5 V pin. That works for tricks, but four servos moving at once can pull over 1 A. If the board resets or the legs twitch, the supply is sagging: use the barrel jack with a good adapter (or a strong USB-C charger), add the optional capacitor, and start with the gentle tricks (bark, tail wag).
 - A0 is the (optional) battery-sense input; leave it empty.
+
+**Where the wires run.** Each servo lead leaves the chassis through the side window just inside its leg, rises beside the deck to a taped joint, and splits into three jumpers: red and black to the rails on that side, orange across to the Uno's digital header. With the barrel jack facing forward, the Uno's power header (5V, GND) is on the robot's left and the digital header (D8–D11) on the right. Leave some slack between the chassis and the joint so the legs can swing freely. (Renders: real printed parts; the Uno and breadboard are stand-in blocks.)
+
+![wiring, top view](images/wiring_top.png)
+
+![wiring, front-left view](images/wiring_3d.png)
+
+![the real robot, wired](images/robot_side.jpg)
 
 ## Power: wired (recommended) or battery (untested)
 
