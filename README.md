@@ -22,7 +22,7 @@ Full-speed video: [images/tricks.mp4](images/tricks.mp4)
 | 4 | MG90S metal-gear micro servo, 180° | Built with the Miuzei MG90S 5-pack: [amazon.com/dp/B0BWJ2CK9D](https://www.amazon.com/dp/B0BWJ2CK9D). Uses each servo's own single-arm horn and screws. |
 | 1 | Half-size solderless breadboard (400 points) | Sits on the deck behind the Uno |
 | ~12 | Jumper wires (male-to-male) | Servo plugs to the breadboard and to D8–D11 |
-| 1 | Power: USB-C cable, or a 7–12 V DC adapter on the barrel jack | The robot is tethered in this version |
+| 1 | Power: USB-C cable, or a 7–12 V DC adapter on the barrel jack | The robot is tethered in this version. A 9 V battery is **not** enough; see [Power](#power-wired-recommended-or-battery-untested) |
 | – | Masking tape | To bundle each servo's three wires (see Wiring) |
 | optional | 470–1000 µF electrolytic capacitor, 10 V or more | Across the breadboard's 5 V and GND rails; smooths servo current spikes |
 | – | PLA, about 108 g | [Bambu PLA Basic](https://us.store.bambulab.com/products/pla-basic-filament) or any PLA |
@@ -73,6 +73,23 @@ Full-speed video: [images/tricks.mp4](images/tricks.mp4)
 - All grounds are shared: Arduino GND and every brown wire go to the (−) rail.
 - **Power note:** all four servos run from the Arduino's 5 V pin. That works for tricks, but four servos moving at once can pull over 1 A. If the board resets or the legs twitch, the supply is sagging: use the barrel jack with a good adapter (or a strong USB-C charger), add the optional capacitor, and start with the gentle tricks (bark, tail wag).
 - A0 is the (optional) battery-sense input; leave it empty.
+
+## Power: wired (recommended) or battery (untested)
+
+**Use the wired route for now:** USB-C, or a 7–12 V DC adapter in the Uno's barrel jack, with the servos on the Uno's 5 V pin as shown above.
+
+**About the battery cavity:** the chassis has a cavity sized for a **9 V battery**. A 9 V battery is **not enough** to run this robot. Four servos pull over 1 A in bursts, and a 9 V battery can't deliver that, so the voltage sags and the board resets. Leave the cavity empty, or use it for tidying wires.
+
+**If you want batteries anyway (untested; I have not built or tried this):**
+- **Battery:** one **2S LiPo (7.4 V nominal, 8.4 V full)**, a small pack of about 300–500 mAh. Check that it fits in the cavity before buying.
+- **Servo power:** an **LM2596S step-down converter** (adjustable, 3 A), for example the [Teyleten LM2596S 5-pack](https://www.amazon.com/dp/B0CPHN7VG1). One converter is enough for four MG90S.
+- **Wiring:**
+  1. Battery (+) through an on/off switch to the Uno's **VIN** pin (or barrel jack) **and** to the converter's IN+. Battery (−) to Uno GND and the converter's IN−.
+  2. **Before connecting any servo**, set the converter's output to **5.0 V** with a multimeter (turn the small brass screw).
+  3. Converter OUT+ to the breadboard (+) rail, OUT− to the (−) rail. Every servo plugs in as before.
+  4. **Remove the wire from the Uno's 5V pin to the (+) rail.** The servos now get power from the converter, and the two 5 V sources must not be joined. Keep the GND connection between the Uno and the (−) rail.
+- **Optional battery gauge:** a 10 kΩ resistor from battery (+) to **A0**, and 4.7 kΩ from A0 to GND. The firmware then shows the voltage and charge on the phone page. It warns at 6.9 V, and at 6.6 V the robot lies down and won't move until the battery is charged. Serial `b` prints the reading; `B 7.95` calibrates it to a multimeter.
+- **LiPo safety:** charge only with a balance charger, never leave it charging unattended, don't run it below 6.6 V (3.3 V per cell), and stop using a pack that puffs up.
 
 ## Firmware
 
