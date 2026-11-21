@@ -41,7 +41,7 @@ Full-speed video: [images/tricks.mp4](images/tricks.mp4)
 
 ![plates](print/plates_overview.png)
 
-- **Servo horn pocket:** each leg holds the servo's single-arm horn in a pocket on its outer face. The pocket runs 21 mm from the hub centre, longer than typical 9 g horns, so horns of different lengths fit without trimming; the hub hole and the tapered sides hold it, and the horn's small screw clamps it.
+- **Servo horn pocket:** each leg holds the servo's single-arm horn in a pocket on its outer face. The pocket runs 21 mm from the hub centre, longer than typical 9 g horns, so horns of different lengths fit without trimming; the hub hole and the tapered sides hold it, and the horn's small screw clamps it. If your horn still doesn't fit well, fix it in the pocket with a dab of hot glue.
 - **TPU paw boots:** print from the external spool, not the AMS (TPU 95A HF is not AMS compatible). Dry the spool if it is old. They are push-fit over the barbed ankle bar.
 - **A1 mini (180 mm bed):** plates 2 and 3 fit as they are. Plate 1 should fit too, but only just (the deck is 172 mm long); if your slicer complains, print the chassis and the deck on separate plates.
 - All STLs are in `stl/`, already oriented for printing.
