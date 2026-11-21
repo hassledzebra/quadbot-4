@@ -25,7 +25,7 @@ Full-speed video: [images/tricks.mp4](images/tricks.mp4)
 | 1 | Power: USB-C cable, or a 7–12 V DC adapter on the barrel jack | The robot is tethered in this version |
 | – | Masking tape | To bundle each servo's three wires (see Wiring) |
 | optional | 470–1000 µF electrolytic capacitor, 10 V or more | Across the breadboard's 5 V and GND rails; smooths servo current spikes |
-| – | PLA, about 112 g | [Bambu PLA Basic](https://us.store.bambulab.com/products/pla-basic-filament) or any PLA |
+| – | PLA, about 108 g | [Bambu PLA Basic](https://us.store.bambulab.com/products/pla-basic-filament) or any PLA |
 | – | TPU 95A, about 10 g | For the four paw boots: [Bambu TPU 95A HF](https://us.store.bambulab.com/products/tpu-95a-hf) or any 95A TPU |
 
 ## Printing
@@ -34,17 +34,16 @@ Full-speed video: [images/tricks.mp4](images/tricks.mp4)
 
 | Plate | Parts | Material | Time | Filament |
 |---|---|---|---|---|
-| 1 | Horn fit coupon (**print first**) | PLA | 15 min | 4 g |
-| 2 | Chassis base + deck | PLA, 3 walls, 15 % | 1 h 56 min | 78 g |
-| 3 | 4 legs (2 × A, 2 × B) | PLA, 4 walls, 30 % gyroid | 1 h 6 min | 30 g |
-| 4 | 4 paw boots | **TPU 95A**, 2 walls, 20 % gyroid | 33 min | 10 g |
-| | **Total** | | **≈ 3 h 50 min** | **≈ 122 g** |
+| 1 | Chassis base + deck | PLA, 3 walls, 15 % | 1 h 56 min | 78 g |
+| 2 | 4 legs (2 × A, 2 × B) | PLA, 4 walls, 30 % gyroid | 1 h 6 min | 30 g |
+| 3 | 4 paw boots | **TPU 95A**, 2 walls, 20 % gyroid | 33 min | 10 g |
+| | **Total** | | **≈ 3 h 34 min** | **≈ 118 g** |
 
 ![plates](print/plates_overview.png)
 
-- **Horn fit coupon first.** The legs hold the servo horn in a pocket. Servo horns vary between brands, so the coupon has three pockets with tips at 18.0, 19.5 and 21.0 mm from the hub (marked 1, 2, 3 dots). Press your horn into each. The legs use pocket 2 (19.5 mm). If a different pocket fits, set `TIP_END` in `cad/dog_leg_v2b.py` and run it to regenerate the legs.
+- **Servo horn pocket:** each leg holds the servo's single-arm horn in a pocket on its outer face. The pocket runs 21 mm from the hub centre, longer than typical 9 g horns, so horns of different lengths fit without trimming; the hub hole and the tapered sides hold it, and the horn's small screw clamps it.
 - **TPU paw boots:** print from the external spool, not the AMS (TPU 95A HF is not AMS compatible). Dry the spool if it is old. They are push-fit over the barbed ankle bar.
-- **A1 mini (180 mm bed):** plates 1, 3 and 4 fit as they are. Plate 2 should fit too, but only just (the deck is 172 mm long); if your slicer complains, print the chassis and the deck on separate plates.
+- **A1 mini (180 mm bed):** plates 2 and 3 fit as they are. Plate 1 should fit too, but only just (the deck is 172 mm long); if your slicer complains, print the chassis and the deck on separate plates.
 - All STLs are in `stl/`, already oriented for printing.
 
 ## Wiring

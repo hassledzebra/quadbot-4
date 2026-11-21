@@ -30,7 +30,9 @@ from manifold3d import CrossSection, Manifold
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import dog_leg_v2 as d  # noqa: E402
 
-TIP_END = 19.5         # hub centre to the pocket's tip end, before HORN_CLEAR (v2: 15.75)
+TIP_END = 21.0         # hub centre to the pocket's tip end, before HORN_CLEAR (v2: 15.75).
+                       # 2026-11-20: no fit test for MakerWorld builders, so take the longest
+                       # coupon size: a longer pocket only leaves air past the arm tip
 SLOT_R1 = 16.5         # screw slot outer end (v2: 14.0)
 COUPON_TIPS = (18.0, 19.5, 21.0)   # fit-test coupon: three pockets, marked 1, 2, 3 dots
 
