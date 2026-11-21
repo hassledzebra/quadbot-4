@@ -46,6 +46,19 @@ Full-speed video: [images/tricks.mp4](images/tricks.mp4)
 - **A1 mini (180 mm bed):** plates 2 and 3 fit as they are. Plate 1 should fit too, but only just (the deck is 172 mm long); if your slicer complains, print the chassis and the deck on separate plates.
 - All STLs are in `stl/`, already oriented for printing.
 
+## Assembly
+
+![assembly animation](images/assembly.gif)
+
+Full-size video: [images/assembly.mp4](images/assembly.mp4). The Arduino and the breadboard in the animation are simple stand-in models.
+
+1. Drop the four MG90S servos into the chassis.
+2. Fit the deck.
+3. Put the Arduino UNO R4 WiFi (front, barrel-jack end) and the breadboard (rear) on the deck.
+4. Press each horn into the pocket on the leg's outer face, push the leg and horn onto the servo spline with the leg pointing straight down, and drive the small horn screw. Leg A goes on the left side, leg B on the right. If a horn doesn't fit well, fix it in the pocket with a dab of hot glue.
+5. Push the TPU paws onto the ankle bars.
+6. Wire it up (below), upload the firmware and tap a trick.
+
 ## Wiring
 
 ![wiring](images/robot_side.jpg)
