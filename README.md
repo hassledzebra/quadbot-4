@@ -5,6 +5,10 @@ It makes its own Wi-Fi network; open a page on your phone and tap a trick.
 
 ![QuadBot-4](images/robot_front.jpg)
 
+![QuadBot-4 in action (2x speed)](images/tricks.gif)
+
+Full-speed video: [images/tricks.mp4](images/tricks.mp4)
+
 **Tricks:** wave (right or left paw), shake, bark, play bow, sit up, stretch, tail wag, dance, and a demo that runs them all.
 
 > **Walking:** the four-servo gait is not reliable yet, so the phone page has no walking pad.
